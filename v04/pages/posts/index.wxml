@@ -1,0 +1,14 @@
+<!--pages/posts/index.wxml-->
+  <navigator
+    open-type="navigate"    
+    url='/pages/posts/show?id=1'    
+  >
+    第1篇博文
+  </navigator>
+  
+  <navigator
+    open-type="navigate"    
+    url='/pages/posts/show?id=2'    
+  >
+    第2篇博文
+  </navigator>
