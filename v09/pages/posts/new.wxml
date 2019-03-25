@@ -1,0 +1,19 @@
+<!--pages/posts/new.wxml-->
+<form>
+  <view >
+    <view >标题</view>
+    <input name="title" type="text" placeholder="输入标题" />
+  </view>
+
+  <view >
+    <view >正文</view>
+    <textarea name="content" placeholder="输入正文">
+    </textarea>
+  </view>
+
+  <view >
+    <button form-type="submit">提交</button>
+    <button form-type="reset">重置</button>
+  </view>
+</form>
+
