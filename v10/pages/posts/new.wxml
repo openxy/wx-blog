@@ -1,5 +1,5 @@
 <!--pages/posts/new.wxml-->
-<form bindsubmit="formSubmit" bindreset="formReset">  
+<form bindsubmit="formSubmit" bindreset="formReset">
   <view >
     <view >标题</view>
     <input name="title" type="text" placeholder="输入标题" />
@@ -7,8 +7,7 @@
 
   <view >
     <view >正文</view>
-    <textarea name="content" placeholder="输入正文">    
-    </textarea> 
+    <textarea name="content" placeholder="输入正文" />
   </view>
 
   <view >

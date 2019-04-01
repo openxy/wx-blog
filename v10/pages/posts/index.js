@@ -1,5 +1,5 @@
 // pages/posts/index.js
-
+const posts = require('../../data/posts.js')
 
 Page({
 
@@ -7,25 +7,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    posts:[]
+    posts:posts
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let page = this
-    wx.request({
-      url: 'http://127.0.0.1:8080/posts.json',
-      data: {},  // 暂无需查询参数
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success(res) {
-        console.log(res.data)  // 当访问成功时，在日志中查看网站的返回结果
-        page.setData({posts:res.data})      
-      }
-    })
+    
   },
 
   /**

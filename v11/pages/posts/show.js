@@ -1,5 +1,6 @@
-// pages/posts/index.js
+// pages/posts/show.js
 const posts = require('../../data/posts.js')
+
 
 Page({
 
@@ -7,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    posts:posts
+    post:{}
   },
 
   /**
@@ -15,6 +16,12 @@ Page({
    */
   onLoad: function (options) {
     
+    let n = options['id'] - 1
+    
+    this.setData({
+      post: posts[n]
+    })
+
   },
 
   /**

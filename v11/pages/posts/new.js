@@ -1,20 +1,34 @@
-// pages/posts/index.js
-const posts = require('../../data/posts.js')
-
+// pages/posts/new.js
 Page({
+
+  formSubmit(e) {
+    console.log('form发生了submit事件，携带数据为：', e.detail.value)
+  },
+
+  formReset(e) {
+    console.log(e)
+  },
 
   /**
    * 页面的初始数据
    */
   data: {
-    posts:posts
+    post:{}
+  },
+
+  fillForm: function(){
+    let post = {
+      title: Math.random().toString(36).substr(2),
+      content: Math.random().toString(36).substr(2)
+    }
+    this.setData({ post: post})
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+
   },
 
   /**

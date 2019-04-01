@@ -2,13 +2,11 @@
 Page({
 
   formSubmit(e) {
-    console.log('form发生了submit事件，携带数据为：', e)
-    e.detail.value = '!!!!!!'
-    
+    console.log('form发生了submit事件，携带数据为：', e.detail)
   },
 
   formReset(e) {
-    console.log(e)    
+    console.log(e)
   },
 
   /**

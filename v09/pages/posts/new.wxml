@@ -7,8 +7,7 @@
 
   <view >
     <view >正文</view>
-    <textarea name="content" placeholder="输入正文">
-    </textarea>
+    <textarea name="content" placeholder="输入正文" />
   </view>
 
   <view >

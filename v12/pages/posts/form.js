@@ -1,19 +1,32 @@
-// pages/posts/index.js
+// pages/posts/form.js
+
 const posts = require('../../data/posts.js')
 
 Page({
+
+  formSubmit(e) {
+    console.log('form发生了submit事件，携带数据为：', e.detail.value)
+  },
+
+  formReset(e) {
+    console.log(e)
+  },
 
   /**
    * 页面的初始数据
    */
   data: {
-    posts:posts
+    post:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let id = options['id']
+    if(id){      
+      this.setData({ post: posts[id] })
+    }         
     
   },
 
