@@ -1,7 +1,9 @@
-<!--pages/posts/form.wxml-->
-<form bindsubmit="formSubmit" bindreset="formReset" class="{{post.id ? 'edit' : 'new'}}">    
-  <input name="id"  type="text" hidden value="{{post.id}}" wx:if="{{post.id}}"  />
-  
+<!--pages/posts/edit.wxml-->
+
+<form bindsubmit="formSubmit" bindreset="formReset">
+
+  <input name="id"  type="text" hidden value="{{post.id}}" />
+
   <view >
     <view >标题</view>
     <input name="title" type="text" placeholder="输入标题" value="{{post.title}}" />
@@ -17,4 +19,3 @@
     <button form-type="reset">重置</button>
   </view>
 </form>
-

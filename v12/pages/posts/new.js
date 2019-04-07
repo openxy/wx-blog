@@ -1,7 +1,4 @@
-// pages/posts/form.js
-
-const posts = require('../../data/posts.js')
-
+// pages/posts/new.js
 Page({
 
   formSubmit(e) {
@@ -23,11 +20,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let id = options['id']
-    if(id){      
-      this.setData({ post: posts[id] })
-    }         
-    
+
   },
 
   /**
