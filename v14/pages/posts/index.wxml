@@ -1,0 +1,20 @@
+<!--pages/posts/index.wxml-->
+<view wx:for="{{posts}}" wx:key='item'>  
+  <navigator
+    open-type="navigate"    
+    url='/pages/posts/show?id={{item.id}}'    
+  >
+    {{index + 1}}: {{item.title}}
+  </navigator>
+  <navigator
+    open-type="navigate"    
+    url='/pages/posts/edit?id={{item.id}}'    
+  >
+    编辑
+  </navigator>  
+</view>
+
+<navigator   url='/pages/posts/new' > 新建</navigator>
+
+
+  

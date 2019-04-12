@@ -1,0 +1,5 @@
+<!--pages/posts/edit.wxml-->
+
+<import src="_form.wxml" />
+
+<template is="postForm" data="{{post:post}}" />
