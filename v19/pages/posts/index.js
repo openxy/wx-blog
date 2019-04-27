@@ -42,8 +42,14 @@ Page({
         if (res.confirm) {
           selection.forEach(function (value, key) {
             store.deleteResource('post', posts[key].id)
-          })                         
-          page.doCancel()          
+          })           
+
+          posts = posts.filter(function (value, key) {
+            return !selection[key]
+          })
+          console.log(posts)
+
+          page.setData({ posts: posts, selection: [], batchMode: false })          
 
         } else if (res.cancel) {
           console.log(page.route)
