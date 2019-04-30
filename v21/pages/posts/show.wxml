@@ -1,0 +1,5 @@
+
+<view class="container" bindtouchstart="touchStart" bindtouchend="touchEnd">   
+  <text class="title">{{post.title}}</text>  
+  <text class="content">{{post.content}}</text>  
+</view>
