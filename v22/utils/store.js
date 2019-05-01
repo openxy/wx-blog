@@ -30,8 +30,8 @@ function saveResource(type,resource) {
   wx.setStorageSync(getRealKey(type,resource.id), resource)
 }
 
-function fetchResource(type,id) {
-  return wx.getStorageSync(getRealKey(type,id))
+function fetchResource(type,id) {  
+  return wx.getStorageSync(getRealKey(type,id))  
 }
 
 function fetchCollection(type) {
@@ -58,7 +58,7 @@ function getNextId(type, id, isPre = false) {
   let keys = getKeys(type)
   let firstId = getId(keys[0])
   let lastId = getId(keys[keys.length - 1])
-
+  
   if (isPre) {
     if (id <= firstId || id > lastId) {
       return lastId
@@ -69,11 +69,11 @@ function getNextId(type, id, isPre = false) {
     }
   }
 
-  let maxDistance = isPre ? maxId * -1 : maxId
-  let distance = maxDistance
-
-  keys.forEach(function (value, key) {
-    let theId = getId(value)
+  let maxDistance = isPre ? maxId * -1 : maxId 
+  let distance = maxDistance 
+  
+  keys.forEach(function (value, key) {    
+    let theId = getId(value) 
     let tmp = (theId - id)
     if(  (!isPre && tmp > 0 && tmp < distance) || (isPre && tmp < 0 && tmp > distance)  ) {
       distance = tmp
@@ -84,7 +84,7 @@ function getNextId(type, id, isPre = false) {
 }
 
 function fetchPage(type, pageNo = 0, size = 5) {
-  let keys = getKeys(type)
+  let keys = getKeys(type).reverse()
   let maxNo = Math.ceil(keys.length / 3) - 1
   if (pageNo > maxNo){
     return []
@@ -92,7 +92,7 @@ function fetchPage(type, pageNo = 0, size = 5) {
     pageNo = 0
   }
 
-  let offset = pageNo * size
+  let offset = pageNo * size  
 
   let collection = keys.slice(offset, offset + size).map(function (key) {
     return wx.getStorageSync(key)

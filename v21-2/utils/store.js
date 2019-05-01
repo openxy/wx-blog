@@ -48,7 +48,7 @@ function getKeys(type) {
   return wx.getStorageInfoSync().keys.filter(function (value, key) {
     let [theType, theId] = value.split('_')
     return theType == type
-  }).reverse()
+  })
 }
 
 
