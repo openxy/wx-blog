@@ -1,0 +1,17 @@
+<!--pages/posts/index.wxml-->
+<text>todo:所有用户的博文列表 </text>
+    <view class="weui-cells  weui-cells_after-title">
+      <block wx:for="{{posts}}" wx:key="id" wx:for-index="idx">
+        <view class="weui-cell">
+          <view class="weui-cell__bd" style='text-decoration:{{selection[idx]}}' bindlongpress='doSelected' data-id="{{idx}}">
+            <navigator    open-type="navigate"  url='show?id={{item._id}}'   >              
+              {{item.title}}                      
+            </navigator>
+          </view>         
+          <view class="weui-cell__ft">
+            <image bindtap="doAction" data-id="{{item._id}}" src="/images/icon_nav_form.png" style="vertical-align: middle;width:20px; height: 20px;"></image>
+          </view>
+ 
+        </view>
+      </block>    
+    </view>

@@ -1,0 +1,37 @@
+<!--pages/posts/index.wxml-->
+<view class="page">
+  <view class="page__hd">
+      <view class="page__title" style="text-align: center;">我的博客</view>    
+  </view>
+
+  <view class="page__bd" bindtouchstart="touchStart" bindtouchend="touchEnd">    
+    <view class="weui-cells__title">
+      博文列表
+    </view>
+
+    <view class="weui-cells  weui-cells_after-title">
+      <block wx:for="{{posts}}" wx:key="_id" wx:for-index="idx">
+        <view class="weui-cell">
+          <view class="weui-cell__bd" style='text-decoration:{{selection[idx]}}' bindlongpress='doSelected' data-id="{{idx}}">
+            <navigator    open-type="navigate"  url='show?id={{item._id}}'   >              
+                {{item.id}}:{{item.title}}                      
+            </navigator>
+          </view>         
+          <view class="weui-cell__ft">
+            <image bindtap="doAction" data-id="{{item._id}}" src="/images/icon_nav_form.png" style="vertical-align: middle;width:20px; height: 20px;"></image>
+          </view>
+ 
+        </view>
+      </block>    
+    </view>
+
+  </view>
+
+  <view class="page__ft" style="text-align: center;">
+    <block wx:if="{{batchMode}}">
+      <button class="weui-btn" type="default"  plain="true" size="mini" bindtap='doBatch'>确定删除 </button>
+      <button class="weui-btn" type="primary"  plain="true" size="mini" bindtap='doCancel'>取消选择 </button>      
+    </block>          
+  </view>    
+
+</view>
